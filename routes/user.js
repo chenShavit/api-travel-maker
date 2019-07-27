@@ -21,7 +21,7 @@ router.post('/getTrips', function(req, res) {
 
 if(!email)
   return sendError(res,'user_id param is missing');
-  const trips= await User.findOne({email:email}).populate('trips');
+  const trips= User.findOne({email:email}).populate('trips');
   user.trips;
 });
 
