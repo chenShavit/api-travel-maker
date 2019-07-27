@@ -17,8 +17,7 @@ router.get('/getAll', function(req, res) {
 });
 
 router.post('/getTrips', function(req, res) {
-  let email = req.body.email;
-  const trips= User.findOne({email:email}).populate('trips');
+  const trips= User.find().populate('trips');
   user.trips;
 });
 
