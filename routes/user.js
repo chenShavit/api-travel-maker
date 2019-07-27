@@ -17,9 +17,13 @@ router.get('/getAll', function(req, res) {
 });
 
 router.post('/getTrips', function(req, res) {
-  const trips= User.find().populate('trips');
-  user.trips;
+  let email = req.body.email;
+  User.findOne({email:email}).populate('trips').exec(function (err, user) {
+    if (err) 
+    console.log('The creator is %s', user.trips);
+  })
 });
+
 
 
 router.put('/add', function(req, res) {
