@@ -18,9 +18,6 @@ router.get('/getAll', function(req, res) {
 
 router.post('/getTrips', function(req, res) {
   let email = req.body.email;
-
-if(!email)
-  return sendError(res,'user_id param is missing');
   const trips= User.findOne({email:email}).populate('trips');
   user.trips;
 });
