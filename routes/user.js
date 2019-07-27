@@ -16,7 +16,7 @@ router.get('/getAll', function(req, res) {
   });
 });
 
-router.post('getTrips', function(req, res) {
+router.post('/getTrips', function(req, res) {
   let email = req.body.email;
 
 if(!email)
