@@ -18,10 +18,12 @@ router.get('/getAll', function(req, res) {
 
 router.post('/getTrips', function(req, res) {
   let email = req.body.email;
-  User.findOne({email:email}).populate('trips').exec(function (err, user) {
+  User.find({email:email}).populate('trips').exec(function (err, user) {
     if (err) 
     console.log('The creator is %s', user.trips);
-  })
+
+    res.json(user);
+  });
 });
 
 
